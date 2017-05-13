@@ -54,12 +54,22 @@
     <Compile Include="Entities\ApplicationDbContext.cs" />
     <Compile Include="Entities\Book.cs" />
     <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Helpers\BookStoreFactories.cs" />
+    <Compile Include="Helpers\Enumerations.cs" />
+    <Compile Include="Helpers\Filters.cs" />
+    <Compile Include="Helpers\QueryHelpers.cs" />
     <Compile Include="Migrations\201705130934280_InitialCreate.cs" />
     <Compile Include="Migrations\201705130934280_InitialCreate.Designer.cs">
       <DependentUpon>201705130934280_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705131131259_Indexes.cs" />
+    <Compile Include="Migrations\201705131131259_Indexes.Designer.cs">
+      <DependentUpon>201705131131259_Indexes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BookViewModel.cs" />
+    <Compile Include="ViewModels\TagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -68,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705130934280_InitialCreate.resx">
       <DependentUpon>201705130934280_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705131131259_Indexes.resx">
+      <DependentUpon>201705131131259_Indexes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
