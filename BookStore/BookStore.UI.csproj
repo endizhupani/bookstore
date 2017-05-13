@@ -1,0 +1,745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A25AAE66-06F9-4B22-A073-92C52B99BC26}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookStore.UI</RootNamespace>
+    <AssemblyName>BookStore.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/a1201149-774e-422a-99ad-e3a64de3342e/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/BookStore</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nancy, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="bower.json" />
+    <Content Include=".bowerrc" />
+    <Content Include="Client\lib\angular\.bower.json" />
+    <Content Include="Client\lib\angular\angular.min.js.gzip" />
+    <Content Include="Client\lib\angular\angular.min.js.map" />
+    <Content Include="Client\lib\angular\bower.json" />
+    <Content Include="Client\lib\angular\LICENSE.md" />
+    <Content Include="Client\lib\angular\package.json" />
+    <Content Include="Client\lib\angular\README.md" />
+    <Content Include="Client\lib\angular-route\.bower.json" />
+    <Content Include="Client\lib\angular-route\angular-route.min.js.map" />
+    <Content Include="Client\lib\angular-route\bower.json" />
+    <Content Include="Client\lib\angular-route\LICENSE.md" />
+    <Content Include="Client\lib\angular-route\package.json" />
+    <Content Include="Client\lib\angular-route\README.md" />
+    <Content Include="Client\lib\bootstrap\.bower.json" />
+    <Content Include="Client\lib\bootstrap\bower.json" />
+    <Content Include="Client\lib\bootstrap\CHANGELOG.md" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Client\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Client\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Client\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Client\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Client\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Client\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Client\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Client\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Client\lib\bootstrap\Gemfile" />
+    <Content Include="Client\lib\bootstrap\Gemfile.lock" />
+    <Content Include="Client\lib\bootstrap\grunt\.jshintrc" />
+    <Content Include="Client\lib\bootstrap\grunt\configBridge.json" />
+    <Content Include="Client\lib\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="Client\lib\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Client\lib\bootstrap\ISSUE_TEMPLATE.md" />
+    <Content Include="Client\lib\bootstrap\js\.jscsrc" />
+    <Content Include="Client\lib\bootstrap\js\.jshintrc" />
+    <Content Include="Client\lib\bootstrap\less\.csscomb.json" />
+    <Content Include="Client\lib\bootstrap\less\.csslintrc" />
+    <Content Include="Client\lib\bootstrap\less\alerts.less" />
+    <Content Include="Client\lib\bootstrap\less\badges.less" />
+    <Content Include="Client\lib\bootstrap\less\bootstrap.less" />
+    <Content Include="Client\lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Client\lib\bootstrap\less\button-groups.less" />
+    <Content Include="Client\lib\bootstrap\less\buttons.less" />
+    <Content Include="Client\lib\bootstrap\less\carousel.less" />
+    <Content Include="Client\lib\bootstrap\less\close.less" />
+    <Content Include="Client\lib\bootstrap\less\code.less" />
+    <Content Include="Client\lib\bootstrap\less\component-animations.less" />
+    <Content Include="Client\lib\bootstrap\less\dropdowns.less" />
+    <Content Include="Client\lib\bootstrap\less\forms.less" />
+    <Content Include="Client\lib\bootstrap\less\glyphicons.less" />
+    <Content Include="Client\lib\bootstrap\less\grid.less" />
+    <Content Include="Client\lib\bootstrap\less\input-groups.less" />
+    <Content Include="Client\lib\bootstrap\less\jumbotron.less" />
+    <Content Include="Client\lib\bootstrap\less\labels.less" />
+    <Content Include="Client\lib\bootstrap\less\list-group.less" />
+    <Content Include="Client\lib\bootstrap\less\media.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\forms.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\grid.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\image.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\labels.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\panels.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\resize.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\size.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Client\lib\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Client\lib\bootstrap\less\modals.less" />
+    <Content Include="Client\lib\bootstrap\less\navbar.less" />
+    <Content Include="Client\lib\bootstrap\less\navs.less" />
+    <Content Include="Client\lib\bootstrap\less\normalize.less" />
+    <Content Include="Client\lib\bootstrap\less\pager.less" />
+    <Content Include="Client\lib\bootstrap\less\pagination.less" />
+    <Content Include="Client\lib\bootstrap\less\panels.less" />
+    <Content Include="Client\lib\bootstrap\less\popovers.less" />
+    <Content Include="Client\lib\bootstrap\less\print.less" />
+    <Content Include="Client\lib\bootstrap\less\progress-bars.less" />
+    <Content Include="Client\lib\bootstrap\less\responsive-embed.less" />
+    <Content Include="Client\lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Client\lib\bootstrap\less\scaffolding.less" />
+    <Content Include="Client\lib\bootstrap\less\tables.less" />
+    <Content Include="Client\lib\bootstrap\less\theme.less" />
+    <Content Include="Client\lib\bootstrap\less\thumbnails.less" />
+    <Content Include="Client\lib\bootstrap\less\tooltip.less" />
+    <Content Include="Client\lib\bootstrap\less\type.less" />
+    <Content Include="Client\lib\bootstrap\less\utilities.less" />
+    <Content Include="Client\lib\bootstrap\less\variables.less" />
+    <Content Include="Client\lib\bootstrap\less\wells.less" />
+    <Content Include="Client\lib\bootstrap\LICENSE" />
+    <Content Include="Client\lib\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Client\lib\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Client\lib\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Client\lib\bootstrap\package.json" />
+    <Content Include="Client\lib\bootstrap\README.md" />
+    <Content Include="Client\lib\bootswatch\.bower.json" />
+    <Content Include="Client\lib\bootswatch\.bowerrc" />
+    <Content Include="Client\lib\bootswatch\.npmignore" />
+    <Content Include="Client\lib\bootswatch\bower.json" />
+    <Content Include="Client\lib\bootswatch\cerulean\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\cerulean\variables.less" />
+    <Content Include="Client\lib\bootswatch\cerulean\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\cerulean\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\cosmo\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\cosmo\variables.less" />
+    <Content Include="Client\lib\bootswatch\cosmo\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\cosmo\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\cyborg\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\cyborg\variables.less" />
+    <Content Include="Client\lib\bootswatch\cyborg\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\cyborg\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\darkly\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\darkly\variables.less" />
+    <Content Include="Client\lib\bootswatch\darkly\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\darkly\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\flatly\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\flatly\variables.less" />
+    <Content Include="Client\lib\bootswatch\flatly\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\flatly\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Client\lib\bootswatch\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Client\lib\bootswatch\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Client\lib\bootswatch\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Client\lib\bootswatch\journal\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\journal\variables.less" />
+    <Content Include="Client\lib\bootswatch\journal\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\journal\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\LICENSE" />
+    <Content Include="Client\lib\bootswatch\lumen\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\lumen\variables.less" />
+    <Content Include="Client\lib\bootswatch\lumen\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\lumen\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\paper\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\paper\variables.less" />
+    <Content Include="Client\lib\bootswatch\paper\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\paper\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\readable\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\readable\variables.less" />
+    <Content Include="Client\lib\bootswatch\readable\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\readable\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\README.md" />
+    <Content Include="Client\lib\bootswatch\sandstone\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\sandstone\variables.less" />
+    <Content Include="Client\lib\bootswatch\sandstone\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\sandstone\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\simplex\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\simplex\variables.less" />
+    <Content Include="Client\lib\bootswatch\simplex\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\simplex\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\slate\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\slate\variables.less" />
+    <Content Include="Client\lib\bootswatch\slate\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\slate\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\spacelab\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\spacelab\variables.less" />
+    <Content Include="Client\lib\bootswatch\spacelab\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\spacelab\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\superhero\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\superhero\variables.less" />
+    <Content Include="Client\lib\bootswatch\superhero\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\superhero\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\united\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\united\variables.less" />
+    <Content Include="Client\lib\bootswatch\united\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\united\_variables.scss" />
+    <Content Include="Client\lib\bootswatch\yeti\bootswatch.less" />
+    <Content Include="Client\lib\bootswatch\yeti\variables.less" />
+    <Content Include="Client\lib\bootswatch\yeti\_bootswatch.scss" />
+    <Content Include="Client\lib\bootswatch\yeti\_variables.scss" />
+    <Content Include="Client\lib\font-awesome\.bower.json" />
+    <Content Include="Client\lib\font-awesome\.npmignore" />
+    <Content Include="Client\lib\font-awesome\bower.json" />
+    <Content Include="Client\lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Client\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Client\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Client\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Client\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Client\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Client\lib\font-awesome\less\animated.less" />
+    <Content Include="Client\lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Client\lib\font-awesome\less\core.less" />
+    <Content Include="Client\lib\font-awesome\less\fixed-width.less" />
+    <Content Include="Client\lib\font-awesome\less\font-awesome.less" />
+    <Content Include="Client\lib\font-awesome\less\icons.less" />
+    <Content Include="Client\lib\font-awesome\less\larger.less" />
+    <Content Include="Client\lib\font-awesome\less\list.less" />
+    <Content Include="Client\lib\font-awesome\less\mixins.less" />
+    <Content Include="Client\lib\font-awesome\less\path.less" />
+    <Content Include="Client\lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Client\lib\font-awesome\less\screen-reader.less" />
+    <Content Include="Client\lib\font-awesome\less\stacked.less" />
+    <Content Include="Client\lib\font-awesome\less\variables.less" />
+    <Content Include="Client\lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_animated.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_core.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_icons.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_larger.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_list.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_path.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="Client\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="Client\lib\jquery\.bower.json" />
+    <Content Include="Client\lib\jquery\bower.json" />
+    <Content Include="Client\lib\jquery\dist\jquery.min.map" />
+    <Content Include="Client\lib\jquery\dist\jquery.slim.min.map" />
+    <Content Include="Client\lib\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Client\lib\jquery\README.md" />
+    <Content Include="Client\lib\jquery\src\.eslintrc.json" />
+    <Content Include="Client\lib\jquery-validation\.bower.json" />
+    <Content Include="Client\lib\jquery-validation\bower.json" />
+    <Content Include="Client\lib\jquery-validation\changelog.md" />
+    <Content Include="Client\lib\jquery-validation\CONTRIBUTING.md" />
+    <Content Include="Client\lib\jquery-validation\LICENSE.md" />
+    <Content Include="Client\lib\jquery-validation\package.json" />
+    <Content Include="Client\lib\jquery-validation\README.md" />
+    <Content Include="Client\lib\jquery-validation\validation.jquery.json" />
+    <Content Include="Client\lib\jquery-validation-unobtrusive\.bower.json" />
+    <Content Include="Client\lib\jquery-validation-unobtrusive\bower.json" />
+    <Content Include="package.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\css\site.css" />
+    <Content Include="Client\js\books-controller.js" />
+    <Content Include="Client\js\site.js" />
+    <Content Include="Client\js\tags-controller.js" />
+    <Content Include="Client\lib\angular-route\angular-route.js" />
+    <Content Include="Client\lib\angular-route\angular-route.min.js" />
+    <Content Include="Client\lib\angular-route\index.js" />
+    <Content Include="Client\lib\angular\angular-csp.css" />
+    <Content Include="Client\lib\angular\angular.js" />
+    <Content Include="Client\lib\angular\angular.min.js" />
+    <Content Include="Client\lib\angular\index.js" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Client\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Client\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Client\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Client\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Client\lib\bootstrap\dist\js\npm.js" />
+    <Content Include="Client\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Client\lib\bootstrap\Gruntfile.js" />
+    <Content Include="Client\lib\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Client\lib\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Client\lib\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Client\lib\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Client\lib\bootstrap\grunt\change-version.js" />
+    <Content Include="Client\lib\bootstrap\js\affix.js" />
+    <Content Include="Client\lib\bootstrap\js\alert.js" />
+    <Content Include="Client\lib\bootstrap\js\button.js" />
+    <Content Include="Client\lib\bootstrap\js\carousel.js" />
+    <Content Include="Client\lib\bootstrap\js\collapse.js" />
+    <Content Include="Client\lib\bootstrap\js\dropdown.js" />
+    <Content Include="Client\lib\bootstrap\js\modal.js" />
+    <Content Include="Client\lib\bootstrap\js\popover.js" />
+    <Content Include="Client\lib\bootstrap\js\scrollspy.js" />
+    <Content Include="Client\lib\bootstrap\js\tab.js" />
+    <Content Include="Client\lib\bootstrap\js\tooltip.js" />
+    <Content Include="Client\lib\bootstrap\js\transition.js" />
+    <Content Include="Client\lib\bootstrap\package.js" />
+    <Content Include="Client\lib\bootswatch\cerulean\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\cerulean\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\cerulean\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\cosmo\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\cosmo\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\cosmo\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\cyborg\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\cyborg\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\cyborg\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\darkly\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\darkly\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\darkly\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\flatly\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\flatly\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\flatly\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Client\lib\bootswatch\journal\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\journal\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\journal\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\lumen\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\lumen\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\lumen\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\paper\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\paper\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\paper\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\readable\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\readable\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\readable\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\sandstone\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\sandstone\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\sandstone\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\simplex\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\simplex\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\simplex\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\slate\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\slate\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\slate\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\spacelab\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\spacelab\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\spacelab\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\superhero\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\superhero\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\superhero\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\united\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\united\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\united\thumbnail.png" />
+    <Content Include="Client\lib\bootswatch\yeti\bootstrap.css" />
+    <Content Include="Client\lib\bootswatch\yeti\bootstrap.min.css" />
+    <Content Include="Client\lib\bootswatch\yeti\thumbnail.png" />
+    <Content Include="Client\lib\font-awesome\.gitignore" />
+    <Content Include="Client\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Client\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Client\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Client\lib\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Client\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="Client\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Client\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <Content Include="Client\lib\jquery-validation\build\release.js" />
+    <Content Include="Client\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Client\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Client\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Client\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Client\lib\jquery-validation\Gruntfile.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\accept.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\additional.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\alphanumeric.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\bankaccountNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\bankorgiroaccountNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\bic.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\cifES.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\cpfBR.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\creditcard.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\creditcardtypes.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\currency.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\dateFA.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\dateITA.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\dateNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\extension.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\giroaccountNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\iban.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\integer.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\ipv4.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\ipv6.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\lettersonly.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\letterswithbasicpunc.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\mobileNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\mobileUK.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\nieES.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\nifES.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\notEqualTo.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\nowhitespace.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\pattern.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\phoneNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\phonesUK.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\phoneUK.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\phoneUS.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\postalcodeBR.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\postalCodeCA.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\postalcodeIT.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\postalcodeNL.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\postcodeUK.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\require_from_group.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\skip_or_fill_minimum.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\statesUS.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\strippedminlength.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\time.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\time12h.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\url2.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\vinUS.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\zipcodeUS.js" />
+    <Content Include="Client\lib\jquery-validation\src\additional\ziprange.js" />
+    <Content Include="Client\lib\jquery-validation\src\ajax.js" />
+    <Content Include="Client\lib\jquery-validation\src\core.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ar.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_az.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_bg.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_bn_BD.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ca.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_cs.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_da.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_de.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_el.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_es.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_es_AR.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_es_PE.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_et.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_eu.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_fa.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_fi.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_fr.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ge.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_gl.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_he.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_hr.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_hu.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_hy_AM.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_id.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_is.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_it.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ja.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ka.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_kk.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ko.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_lt.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_lv.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_mk.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_my.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_nl.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_no.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_pl.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_pt_BR.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_pt_PT.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ro.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ru.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_si.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_sk.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_sl.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_sr.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_sr_lat.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_sv.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_th.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_tj.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_tr.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_uk.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_ur.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_vi.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_zh.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\messages_zh_TW.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\methods_de.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\methods_es_CL.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\methods_fi.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\methods_nl.js" />
+    <Content Include="Client\lib\jquery-validation\src\localization\methods_pt.js" />
+    <Content Include="Client\lib\jquery\AUTHORS.txt" />
+    <Content Include="Client\lib\jquery\dist\core.js" />
+    <Content Include="Client\lib\jquery\dist\jquery.js" />
+    <Content Include="Client\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Client\lib\jquery\dist\jquery.slim.js" />
+    <Content Include="Client\lib\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Client\lib\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="Client\lib\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="Client\lib\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="Client\lib\jquery\LICENSE.txt" />
+    <Content Include="Client\lib\jquery\src\ajax.js" />
+    <Content Include="Client\lib\jquery\src\ajax\jsonp.js" />
+    <Content Include="Client\lib\jquery\src\ajax\load.js" />
+    <Content Include="Client\lib\jquery\src\ajax\parseXML.js" />
+    <Content Include="Client\lib\jquery\src\ajax\script.js" />
+    <Content Include="Client\lib\jquery\src\ajax\var\location.js" />
+    <Content Include="Client\lib\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Client\lib\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Client\lib\jquery\src\ajax\xhr.js" />
+    <Content Include="Client\lib\jquery\src\attributes.js" />
+    <Content Include="Client\lib\jquery\src\attributes\attr.js" />
+    <Content Include="Client\lib\jquery\src\attributes\classes.js" />
+    <Content Include="Client\lib\jquery\src\attributes\prop.js" />
+    <Content Include="Client\lib\jquery\src\attributes\support.js" />
+    <Content Include="Client\lib\jquery\src\attributes\val.js" />
+    <Content Include="Client\lib\jquery\src\callbacks.js" />
+    <Content Include="Client\lib\jquery\src\core.js" />
+    <Content Include="Client\lib\jquery\src\core\access.js" />
+    <Content Include="Client\lib\jquery\src\core\DOMEval.js" />
+    <Content Include="Client\lib\jquery\src\core\init.js" />
+    <Content Include="Client\lib\jquery\src\core\nodeName.js" />
+    <Content Include="Client\lib\jquery\src\core\parseHTML.js" />
+    <Content Include="Client\lib\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="Client\lib\jquery\src\core\ready.js" />
+    <Content Include="Client\lib\jquery\src\core\readyException.js" />
+    <Content Include="Client\lib\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="Client\lib\jquery\src\core\support.js" />
+    <Content Include="Client\lib\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Client\lib\jquery\src\css.js" />
+    <Content Include="Client\lib\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Client\lib\jquery\src\css\adjustCSS.js" />
+    <Content Include="Client\lib\jquery\src\css\curCSS.js" />
+    <Content Include="Client\lib\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Client\lib\jquery\src\css\showHide.js" />
+    <Content Include="Client\lib\jquery\src\css\support.js" />
+    <Content Include="Client\lib\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Client\lib\jquery\src\css\var\getStyles.js" />
+    <Content Include="Client\lib\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="Client\lib\jquery\src\css\var\rmargin.js" />
+    <Content Include="Client\lib\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Client\lib\jquery\src\css\var\swap.js" />
+    <Content Include="Client\lib\jquery\src\data.js" />
+    <Content Include="Client\lib\jquery\src\data\Data.js" />
+    <Content Include="Client\lib\jquery\src\data\var\acceptData.js" />
+    <Content Include="Client\lib\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Client\lib\jquery\src\data\var\dataUser.js" />
+    <Content Include="Client\lib\jquery\src\deferred.js" />
+    <Content Include="Client\lib\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="Client\lib\jquery\src\deprecated.js" />
+    <Content Include="Client\lib\jquery\src\dimensions.js" />
+    <Content Include="Client\lib\jquery\src\effects.js" />
+    <Content Include="Client\lib\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Client\lib\jquery\src\effects\Tween.js" />
+    <Content Include="Client\lib\jquery\src\event.js" />
+    <Content Include="Client\lib\jquery\src\event\ajax.js" />
+    <Content Include="Client\lib\jquery\src\event\alias.js" />
+    <Content Include="Client\lib\jquery\src\event\focusin.js" />
+    <Content Include="Client\lib\jquery\src\event\support.js" />
+    <Content Include="Client\lib\jquery\src\event\trigger.js" />
+    <Content Include="Client\lib\jquery\src\exports\amd.js" />
+    <Content Include="Client\lib\jquery\src\exports\global.js" />
+    <Content Include="Client\lib\jquery\src\jquery.js" />
+    <Content Include="Client\lib\jquery\src\manipulation.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\getAll.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\support.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Client\lib\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Client\lib\jquery\src\offset.js" />
+    <Content Include="Client\lib\jquery\src\queue.js" />
+    <Content Include="Client\lib\jquery\src\queue\delay.js" />
+    <Content Include="Client\lib\jquery\src\selector-native.js" />
+    <Content Include="Client\lib\jquery\src\selector-sizzle.js" />
+    <Content Include="Client\lib\jquery\src\selector.js" />
+    <Content Include="Client\lib\jquery\src\serialize.js" />
+    <Content Include="Client\lib\jquery\src\traversing.js" />
+    <Content Include="Client\lib\jquery\src\traversing\findFilter.js" />
+    <Content Include="Client\lib\jquery\src\traversing\var\dir.js" />
+    <Content Include="Client\lib\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Client\lib\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Client\lib\jquery\src\var\arr.js" />
+    <Content Include="Client\lib\jquery\src\var\class2type.js" />
+    <Content Include="Client\lib\jquery\src\var\concat.js" />
+    <Content Include="Client\lib\jquery\src\var\document.js" />
+    <Content Include="Client\lib\jquery\src\var\documentElement.js" />
+    <Content Include="Client\lib\jquery\src\var\fnToString.js" />
+    <Content Include="Client\lib\jquery\src\var\getProto.js" />
+    <Content Include="Client\lib\jquery\src\var\hasOwn.js" />
+    <Content Include="Client\lib\jquery\src\var\indexOf.js" />
+    <Content Include="Client\lib\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="Client\lib\jquery\src\var\pnum.js" />
+    <Content Include="Client\lib\jquery\src\var\push.js" />
+    <Content Include="Client\lib\jquery\src\var\rcssNum.js" />
+    <Content Include="Client\lib\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="Client\lib\jquery\src\var\slice.js" />
+    <Content Include="Client\lib\jquery\src\var\support.js" />
+    <Content Include="Client\lib\jquery\src\var\toString.js" />
+    <Content Include="Client\lib\jquery\src\wrap.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Domain\BookStore.Domain.csproj">
+      <Project>{7e265ac8-138d-4374-a269-98ca8c4b082a}</Project>
+      <Name>BookStore.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\lib\_app\css\" />
+    <Folder Include="Client\lib\_app\js\" />
+    <Folder Include="Client\views\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60371</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60371/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

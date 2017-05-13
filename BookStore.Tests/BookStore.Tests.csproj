@@ -52,9 +52,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookStore\BookStore.csproj">
+    <ProjectReference Include="..\BookStore\BookStore.UI.csproj">
       <Project>{A25AAE66-06F9-4B22-A073-92C52B99BC26}</Project>
-      <Name>BookStore</Name>
+      <Name>BookStore.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

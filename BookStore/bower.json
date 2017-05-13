@@ -1,0 +1,31 @@
+{
+  "name": "BookStore",
+  "homepage": "https://github.com/endizhupani/bookstore",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Endi Zhupani <endizhupani@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.2.1",
+    "jquery-validation": "~1.16.0",
+    "jquery-validation-unobtrusive": "~3.2.6",
+    "bootstrap": "3.3.7",
+    "font-awesome": "4.7.0",
+    "bootswatch": "3.3.6+2",
+    "angular": "1.6.4",
+    "angular-route": "1.6.4"
+  },
+  "install": {
+    "path": "Client/lib"
+  }
+}
