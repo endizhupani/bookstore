@@ -9,4 +9,3 @@ This application is built using C# and NancyFX
 2. Create the database. For this you have two options:
     1. Restore the backup in the 'assets' folder.
     2. Create an empty database, modify the connection string in web.config to point to the new database and run an update-database command using BookStore.Domain as the default project.
-3. test
