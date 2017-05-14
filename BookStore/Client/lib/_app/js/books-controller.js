@@ -1,0 +1,1 @@
+!function(){"use strict";function o(o){var t=this;t.books=[],t.errorMessage="",t.isBusy=!0,o.get("/api/books").then(function(o){angular.copy(o.data,t.books)},function(o){t.errorMessage="Failed to load data "+o}).finally(function(){t.isBusy=!1})}o.$inject=["$http"],angular.module("app-bookstore").controller("booksController",o)}();

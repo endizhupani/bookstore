@@ -1,1 +1,32 @@
-﻿
+﻿html {
+    height: 100%;
+}
+body {
+    padding-top: 64px;
+    height:100%;
+}
+#wrapper {
+   min-height:100%;
+   position:relative;
+}
+#MainContent {
+   
+   padding-bottom:50px;   /* Height of the footer */
+}
+footer {
+position:absolute;
+   bottom:0;
+   width:100%;
+   height:50px; 
+    background-color: white;
+    font-size: 12px;
+    
+}
+footer p {
+    margin: 1em 0 1em 0;
+}
+
+.navbar {
+    -ms-border-radius: 0px;
+    border-radius: 0px;
+}

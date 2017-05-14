@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>BookStore</title>
+    <meta charset="utf-8" />
+    <!--<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="/Client/lib/bootswatch/paper/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Client/css/site.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Bookstore</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/books">Books</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="MainContent" class="container-fluid">
+
+
+            @RenderBody()
+
+        </div>
+
+        <footer>
+            <div class="container-fluid">
+                <p>&copy; 2017 Bookstore. All rights reserved</p>
+            </div>
+        </footer>
+    </div>
+    <script src="~/Client/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/Client/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @RenderSection("scripts", required:false)
+</body>
+</html>

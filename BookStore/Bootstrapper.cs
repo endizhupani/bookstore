@@ -9,19 +9,31 @@ using BookStore.Domain.Entities;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Bootstrappers.Ninject;
+using Nancy.Conventions;
 using Ninject;
 
 namespace BookStore.UI
 {
-    //public class Bootstrapper : NinjectNancyBootstrapper
-    //{
+    public class Bootstrapper : NinjectNancyBootstrapper
+    {
 
-    //    protected override void ConfigureRequestContainer(IKernel container, NancyContext context)
-    //    {
-    //        base.ConfigureRequestContainer(container, context);
-    //        container.Bind<IBookStoreRepository>().To<BookStoreRepository>();
-    //        container.Bind<ApplicationDbContext>().ToSelf();
-    //    }
-        
-    //}
+        protected override void ConfigureRequestContainer(IKernel container, NancyContext context)
+        {
+            base.ConfigureRequestContainer(container, context);
+            container.Bind<IBookStoreRepository>().To<BookStoreRepository>();
+            container.Bind<ApplicationDbContext>().ToSelf();
+        }
+
+        protected override void ConfigureConventions(NancyConventions nancyConventions)
+        {
+            base.ConfigureConventions(nancyConventions);
+            nancyConventions.ViewLocationConventions.Add((viewName, model, context) => string.Concat("Client/Views/", viewName));
+            nancyConventions.ViewLocationConventions.Add((viewName, model, context) => string.Concat("Client/Views/",context.ModuleName, viewName));
+            nancyConventions.ViewLocationConventions.Add((viewName, model, context) => string.Concat("Views/", context.ModuleName, viewName));
+            nancyConventions.ViewLocationConventions.Add((viewName, model, context) => string.Concat("Views/Shared/", viewName));
+            //nancyConventions.StaticContentsConventions.Add((context, rootPath) => {
+            //    // Return your response here or null
+            //});
+        }
+    }
 }

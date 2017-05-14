@@ -27,20 +27,12 @@ namespace BookStore.UI.Modules
                 var model = await _repository.GetBooksAsync(includeTags: true);
                 return new JsonResponse(model, new DefaultJsonSerializer());
             };
-            Get["/{id}", true] = async (p, ct) =>
-            {
-                return new JsonResponse(await _repository.GetBookByIdAsync(p.id, true), new DefaultJsonSerializer());
-            };
-            Post["/", true] = async (p, ct) =>
-            {
-                return await UpdateBook();
-            };
+            Get["/{id}", true] = async (p, ct) => new JsonResponse(await _repository.GetBookByIdAsync(p.id, true), new DefaultJsonSerializer());
+
+            Post["/", true] = async (p, ct) => await AddOrUpdateBook();
 
             //This is used for updates
-            Put["/", true] = async (p, ct) =>
-            {
-                return await UpdateBook();
-            };
+            Put["/", true] = async (p, ct) => await AddOrUpdateBook();
 
             Delete["/{id}", true] = async (p, ct) =>
             {
@@ -50,7 +42,7 @@ namespace BookStore.UI.Modules
             };
         }
 
-        private async Task<Response> UpdateBook()
+        private async Task<Response> AddOrUpdateBook()
         {
             BookViewModel model = this.Bind<BookViewModel>();
             await _repository.AddOrUpdateBookAsync(model);

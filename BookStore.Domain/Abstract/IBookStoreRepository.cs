@@ -50,16 +50,10 @@ namespace BookStore.Domain.Abstract
         /// </summary>
         /// <param name="id">id of the book to be removed</param>
         void DeleteBookById(int id);
-
-        ///// <summary>
-        ///// Adds a lsit of tags to a book
-        ///// </summary>
-        ///// <param name="bookId">id of the book</param>
-        ///// <param name="tags">tags to be added to the book</param>
-        //void AddTagsToBook(int bookId, List<TagViewModel> tags);
         #endregion
 
         #region Tags
+
         /// <summary>
         /// Gets a list of tags from the database
         /// </summary>
@@ -68,22 +62,25 @@ namespace BookStore.Domain.Abstract
         /// <param name="sortOrder">Direction of the sort</param>
         /// <param name="orderBy">Property to sort by</param>
         /// <param name="propertyFilters">A list of filters</param>
+        /// <param name="includeTags">If true, the list of tags for each book will be retrieved from the database</param>
         /// <returns>A list of tags</returns>
         Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending,
-            string orderBy = "TagId", List<PropertyFilter> propertyFilters = null);
+            string orderBy = "TagId", List<PropertyFilter> propertyFilters = null, bool includeTags = false);
 
         /// <summary>
         /// Gets a tag with the specified id
         /// </summary>
         /// <param name="id">id of the tag to be retrieved</param>
+        /// <param name="includeBooks">if true, the books associated with this tag will be retrieved too.</param>
         /// <returns>the retireved tag</returns>
-        Task<TagViewModel> GetTagById(int id);
+        Task<TagViewModel> GetTagByIdAsync(int id, bool includeBooks = false);
 
         /// <summary>
         /// Adds a tag to the context or updates an existing tag
         /// </summary>
         /// <param name="tag">The tag to be added or updated</param>
-        void AddOrUpdateTag(TagViewModel tag);
+        /// <returns>The new or updated tag.</returns>
+        Task<TagViewModel> AddOrUpdateTagAsync(TagViewModel tag);
 
         /// <summary>
         /// Removes a tag from the context

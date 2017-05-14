@@ -20,6 +20,7 @@ namespace BookStore.Domain.Concrete
         {
             _context = ctx;
         }
+
         public async Task<List<BookViewModel>> GetBooksAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "BookId",
             List<PropertyFilter> propertyFilters = null, bool includeTags = false)
         {
@@ -119,30 +120,77 @@ namespace BookStore.Domain.Concrete
             return await _context.SaveChangesAsync();
         }
 
-        //public void AddTagsToBook(int bookId, List<TagViewModel> tags)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        public Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "TagId",
-            List<PropertyFilter> propertyFilters = null)
+        public Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "TagId", 
+            List<PropertyFilter> propertyFilters = null, bool includeTags = false)
         {
-            throw new NotImplementedException();
+            IQueryable<Tag> query = _context.Tags;
+            if (includeTags)
+            {
+                query = query.Include(t => t.Books);
+            }
+            var deleg = QueryHelpers.GetExpression<Tag>(propertyFilters);
+            if (deleg != null)
+            {
+                query = query.Where(deleg);
+            }
+
+            return query.OrderBy(orderBy, sortOrder)
+                .Select(t => new TagViewModel()
+                {
+                    TagId = t.TagId,
+                    Name = t.Name,
+                    Description = t.Description,
+                    Books = t.Books
+                })
+                .ToListAsync();
         }
 
-        public Task<TagViewModel> GetTagById(int id)
+        public Task<TagViewModel> GetTagByIdAsync(int id, bool includeBooks = false)
         {
-            throw new NotImplementedException();
+            IQueryable<Tag> query = _context.Tags;
+            if (includeBooks)
+            {
+                query = query.Include(t => t.Books);
+            }
+            return query.Where(t => t.TagId == id)
+                .Select(t => new TagViewModel()
+                {
+                    TagId = t.TagId,
+                    Name = t.Name,
+                    Description = t.Description,
+                    Books = t.Books
+                })
+                .FirstOrDefaultAsync();
         }
 
-        public void AddOrUpdateTag(TagViewModel tag)
+        public async Task<TagViewModel> AddOrUpdateTagAsync(TagViewModel tag)
         {
-            throw new NotImplementedException();
+            Tag newOrUpdatedTag = tag.ToTag();
+            if (tag.TagId > 0)
+            {
+                Tag dbTag = await _context.Tags.FirstOrDefaultAsync(t => t.TagId == tag.TagId);
+                if (dbTag != null)
+                {
+                    _context.Entry(dbTag).CurrentValues.SetValues(newOrUpdatedTag);
+                    _context.Entry(dbTag).State = EntityState.Modified;
+                }
+            }
+            else
+            {
+                _context.Tags.Add(newOrUpdatedTag);
+            }
+            return tag;
         }
 
-        public void DeleteTagById(int id)
+        public async void DeleteTagById(int id)
         {
-            throw new NotImplementedException();
+            if (id <= 0)
+                return;
+            Tag tagToDelete = await _context.Tags.FirstOrDefaultAsync(t => t.TagId == id);
+            if (tagToDelete != null)
+            {
+                _context.Tags.Remove(tagToDelete);
+            }
         }
     }
 }

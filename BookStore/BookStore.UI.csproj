@@ -89,6 +89,10 @@
       <HintPath>..\packages\Nancy.Hosting.Aspnet.1.4.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.Viewengines.Razor.1.4.3\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -106,6 +110,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -115,6 +123,24 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\js\app-bookstore.js" />
+    <Content Include="Client\js\simple-controls.js" />
+    <Content Include="Client\views\bookDetailsView.html" />
+    <Content Include="Client\views\booksView.html" />
+    <Content Include="Client\views\index.html" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.css" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.js" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.min.css" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.min.js" />
+    <Content Include="Client\lib\angular-ui-select\docs\assets\app.js" />
+    <Content Include="Client\lib\angular-ui-select\docs\assets\demo.js" />
+    <Content Include="Client\lib\angular-ui-select\docs\assets\docs.css" />
+    <Content Include="Client\lib\angular-ui-select\docs\assets\plunkr.js" />
+    <Content Include="Client\lib\angular-ui-select\docs\index.html" />
+    <Content Include="Client\lib\angular-ui-select\docs\partials\_footer.html" />
+    <Content Include="Client\lib\angular-ui-select\docs\partials\_header.html" />
+    <Content Include="Client\lib\angular-ui-select\index.js" />
+    <Content Include="Client\views\waitCursor.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -367,6 +393,20 @@
     <Content Include="Client\lib\jquery-validation-unobtrusive\.bower.json" />
     <Content Include="Client\lib\jquery-validation-unobtrusive\bower.json" />
     <Content Include="package.json" />
+    <Content Include="Client\lib\angular-ui-select\.bower.json" />
+    <Content Include="Client\lib\angular-ui-select\bower.json" />
+    <Content Include="Client\lib\angular-ui-select\CHANGELOG.md" />
+    <Content Include="Client\lib\angular-ui-select\composer.json" />
+    <Content Include="Client\lib\angular-ui-select\CONTRIBUTING.md" />
+    <Content Include="Client\lib\angular-ui-select\deploy-docs.sh" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.min.css.map" />
+    <Content Include="Client\lib\angular-ui-select\dist\select.min.js.map" />
+    <Content Include="Client\lib\angular-ui-select\LICENSE" />
+    <Content Include="Client\lib\angular-ui-select\package.json" />
+    <Content Include="Client\lib\angular-ui-select\README.md" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -705,6 +745,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Modules\ApiBooksModule.cs" />
+    <Compile Include="Modules\BooksModule.cs" />
     <Compile Include="Modules\HomeModule.Cs" />
     <Compile Include="Modules\ApiTagsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -721,7 +762,6 @@
   <ItemGroup>
     <Folder Include="Client\lib\_app\css\" />
     <Folder Include="Client\lib\_app\js\" />
-    <Folder Include="Client\views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -754,7 +794,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Nancy.Viewengines.Razor.1.4.3\build\Nancy.ViewEngines.Razor.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nancy.Viewengines.Razor.1.4.3\build\Nancy.ViewEngines.Razor.targets'))" />
   </Target>
+  <Import Project="..\packages\Nancy.Viewengines.Razor.1.4.3\build\Nancy.ViewEngines.Razor.targets" Condition="Exists('..\packages\Nancy.Viewengines.Razor.1.4.3\build\Nancy.ViewEngines.Razor.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -23,7 +23,8 @@
     "font-awesome": "4.7.0",
     "bootswatch": "3.3.6+2",
     "angular": "1.6.4",
-    "angular-route": "1.6.4"
+    "angular-route": "1.6.4",
+    "angular-ui-select": "0.19.8"
   },
   "install": {
     "path": "Client/lib"

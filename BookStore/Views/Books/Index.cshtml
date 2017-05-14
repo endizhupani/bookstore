@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_Layout";
+}
+@section styles{
+<link href="~/Client/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+}
+
+<div class="row" ng-app="app-bookstore">
+    <div ng-view></div>
+</div>
+
+@section scripts{
+<script src="~/Client/lib/angular/angular.min.js"></script>
+<script src="~/Client/lib/angular-route/angular-route.min.js"></script>
+<script src="~/Client/lib/angular-ui-select/dist/select.min.js"></script>
+<script src="~/Client/js/app-bookstore.js"></script>
+<script src="~/Client/js/books-controller.js"></script>
+<script src="~/Client/js/simple-controls.js"></script>
+}
