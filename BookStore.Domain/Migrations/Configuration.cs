@@ -24,165 +24,112 @@ namespace BookStore.Domain.Migrations
             {
                 new Tag()
                 {
-                    Name = "Science fiction",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Science fiction"
+                    
                 },
                 new Tag()
                 {
-                    Name = "Satire",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Satire"
                 },
                 new Tag()
                 {
-                    Name = "Drama",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Drama"
                 },
                 new Tag()
                 {
-                    Name = "Action and Adventure",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Action and Adventure"
                 },
                 new Tag()
                 {
-                    Name = "Romance",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Romance"
                 },
                 new Tag()
                 {
-                    Name = "Mystery",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Mystery"
                 },
                 new Tag()
                 {
-                    Name = "Horror",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Horror"
                 },
                 new Tag()
                 {
-                    Name = "Self help",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Self help"
                 },
                 new Tag()
                 {
-                    Name = "Health",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Health"
                 },
                 new Tag()
                 {
-                    Name = "Guide",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Guide"
                 },
                 new Tag()
                 {
-                    Name = "Travel",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Travel"
                 },
                 new Tag()
                 {
-                    Name = "Children&#39;s",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Children&#39;s"
                 },
                 new Tag()
                 {
-                    Name = "Religion, Spirituality &amp; New Age",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Religion, Spirituality &amp; New Age"
                 },
                 new Tag()
                 {
-                    Name = "Science",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Science"
                 },
                 new Tag()
                 {
-                    Name = "History",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "History"
                 },
                 new Tag()
                 {
-                    Name = "Math",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Math"
                 },
                 new Tag()
                 {
-                    Name = "Anthology",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Anthology"
                 },
                 new Tag()
                 {
-                    Name = "Poetry",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Poetry"
                 },
                 new Tag()
                 {
-                    Name = "Encyclopedias",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Encyclopedias"
                 },
                 new Tag()
                 {
-                    Name = "Dictionaries",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Dictionaries"
                 },
                 new Tag()
                 {
-                    Name = "Comics",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Comics"
                 },
                 new Tag()
                 {
-                    Name = "Art",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Art"
                 },
                 new Tag()
                 {
-                    Name = "Cookbooks",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Cookbooks"
                 },
                 new Tag()
                 {
-                    Name = "Diaries",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Diaries"
                 },
                 new Tag()
                 {
-                    Name = "Journals",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Journals"
                 },
                 new Tag()
                 {
-                    Name = "Series",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Series"
                 },
                 new Tag()
                 {
-                    Name = "Fantasy",
-                    Description =
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor ipsum, tincidunt nec quam nec, imperdiet placerat nulla. Duis ultricies porta enim non tempor. Mauris a finibus nibh, eu rutrum tortor. Nunc nibh sapien, pellentesque in viverra quis, hendrerit nec urna. Praesent gravida ante non elit tristique, nec tincidunt dui hendrerit. Quisque feugiat dictum arcu in placerat. Curabitur at tortor sit amet turpis aliquet vestibulum."
+                    Name = "Fantasy"
                 }
             };
 

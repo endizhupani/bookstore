@@ -18,7 +18,7 @@ position:absolute;
    bottom:0;
    width:100%;
    height:50px; 
-    background-color: white;
+    background-color: black;
     font-size: 12px;
     
 }
@@ -29,4 +29,33 @@ footer p {
 .navbar {
     -ms-border-radius: 0px;
     border-radius: 0px;
+}
+
+table tr td.buttons {
+width:1%;
+white-space: nowrap;
+}
+
+span.label {
+    margin:0 5px;
+}
+.alert.alert-warning {
+    margin-top:10px;
+}
+.table-responsive {
+    margin-top:10px;
+}
+.ui-select-choices {
+z-index:10 !important;
+}
+
+#tags {
+    margin-top:10px;
+    
+}
+#tags span{
+    display: inline-block;
+}
+.close-button:hover {
+    cursor:pointer;
 }

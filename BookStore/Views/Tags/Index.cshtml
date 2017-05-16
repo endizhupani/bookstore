@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "_Layout";
+}
+@section styles{
+    <link href="~/Client/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+}
+
+<div class="row" ng-app="app-tags">
+    <div ng-view></div>
+</div>
+
+@section scripts{
+    <script src="~/Client/lib/angular/angular.min.js"></script>
+    <script src="~/Client/lib/angular-route/angular-route.min.js"></script>
+    
+<script src="~/Client/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="~/Client/js/site.js"></script>
+    <script src="~/Client/js/app-tags.js"></script>
+    <script src="~/Client/js/tags-controller.js"></script>
+    <script src="~/Client/js/simple-controls.js"></script>
+
+}

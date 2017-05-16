@@ -4,9 +4,21 @@
 @section styles{
 <link href="~/Client/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     
+<link href="~/Client/lib/jquery-ui/themes/smoothness/theme.css" rel="stylesheet" />
+<link href="~/Client/lib/jquery-ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Client/lib/angular-ui-select/dist/select.min.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+  <script>
+    document.createElement('ui-select');
+    document.createElement('ui-select-match');
+    document.createElement('ui-select-choices');
+  </script>
+<![endif]-->
+
 }
 
-<div class="row" ng-app="app-bookstore">
+<div class="row" ng-app="app-books">
     <div ng-view></div>
 </div>
 
@@ -14,7 +26,11 @@
 <script src="~/Client/lib/angular/angular.min.js"></script>
 <script src="~/Client/lib/angular-route/angular-route.min.js"></script>
 <script src="~/Client/lib/angular-ui-select/dist/select.min.js"></script>
-<script src="~/Client/js/app-bookstore.js"></script>
+<script src="~/Client/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="~/Client/lib/jquery-ui/jquery-ui.min.js"></script>
+<script src="~/Client/js/site.js"></script>
+<script src="~/Client/js/app-books.js"></script>
 <script src="~/Client/js/books-controller.js"></script>
 <script src="~/Client/js/simple-controls.js"></script>
+
 }

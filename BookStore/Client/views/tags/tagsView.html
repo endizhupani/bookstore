@@ -1,0 +1,46 @@
+﻿<div class="col-lg-12"><h1>Tags</h1></div>
+
+    <div class="col-lg-12">
+        <wait-cursor display-when="vm.isBusy"></wait-cursor>
+        
+            <div class="text-danger col-md-3 col-xs-12" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+            <div class="alert alert-warning col-md-3 col-xs-12" ng-show="vm.message" ng-click="vm.emptyMessage()"><p>{{vm.message}}</p></div>
+        
+    </div>
+<div class="row">
+    <div class="col-lg-12" ng-hide="vm.isBusy">
+        <form ng-submit="vm.addTag()" class="form-inline col-md-4" name="newTagForm" novalidate>
+            <div class="form-group">
+                <label for="Name">Name </label>
+                <input class="form-control"
+                       type="text"
+                       id="name" name="name"
+                       ng-model="vm.tag.name"
+                       required ng-minlength="5" ng-maxlength="100" />
+                <div ng-show="newTagForm.$submitted || newTagForm.name.$touched">
+                    <span ng-show="newTagForm.name.$error.required"
+                          class="text-warning">
+                        The name is required.
+                    </span>
+                    <span ng-show="newTagForm.name.$error.minlength"
+                          class="text-warning">
+                        The name must be between 5 and 100 characters
+                    </span>
+                    <span ng-show="newTagForm.name.$error.maxlength"
+                          class="text-warning">
+                        The name be between 5 and 100 characters
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit"
+                       value="Add"
+                       class="btn btn-success btn-sm"
+                       ng-disabled="newTagForm.$invalid" />
+            </div>
+        </form>
+        <div id="tags" class="col-lg-12">
+            <span ng-repeat="tag in vm.tags" class="label label-default"><span ng-bind-html="tag.name"></span> <span class="close-button" ng-click="vm.deleteTag($index)"><i class="fa fa-remove"></i></span></span>&nbsp;
+        </div>
+    </div>
+</div>

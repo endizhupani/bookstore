@@ -1,0 +1,21 @@
+﻿
+    <div class="col-lg-12">
+        <div class="text-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+        <wait-cursor display-when="vm.isBusy"></wait-cursor>
+    </div>
+<br />
+<div class="col-lg-12">
+    <a href="#!/edit/{{ vm.book.bookId }}" class="btn btn-info">Edit</a>
+</div>
+    <div class="col-md-6" ng-hide="vm.isBusy">
+        <h3>{{vm.book.title}}</h3>
+        <div>
+            <span ng-repeat="tag in vm.book.tags" class="label label-primary" ng-bind-html="tag.name"></span>
+        </div>
+        <h4>{{vm.book.author}}</h4>
+        <h4>{{vm.book.publicationDate | date:shortDate }}</h4>
+        <h4>{{vm.book.numberOfPages}} pages</h4>
+        <!--<h4>Tags</h4>-->
+        
+        <p>{{vm.book.description}}</p>
+    </div>

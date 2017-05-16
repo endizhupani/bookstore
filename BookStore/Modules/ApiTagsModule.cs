@@ -8,6 +8,7 @@ using BookStore.Domain.ViewModels;
 using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Responses;
+using Nancy.Helpers;
 
 namespace BookStore.UI.Modules
 {
@@ -29,9 +30,9 @@ namespace BookStore.UI.Modules
 
             Put["/", true] = async (p, ct) => await AddOrUpdateTag();
 
-            Delete["/{id}", true] = async (p, ct) =>
+            Delete["/{name}", true] = async (p, ct) =>
             {
-                _repository.DeleteTagById(p.id);
+                _repository.DeleteTagByName(HttpUtility.HtmlDecode(p.name));
                 await _repository.SaveChangesAsync();
                 return new JsonResponse(new {success = true}, new DefaultJsonSerializer());
             };

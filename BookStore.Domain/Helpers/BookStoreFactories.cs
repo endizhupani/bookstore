@@ -73,7 +73,7 @@ namespace BookStore.Domain.Helpers
             {
                 TagId = input.TagId,
                 Name = input.Name,
-                Description = input.Description,
+                
                 Books = input.Books
             };
         }
@@ -90,7 +90,7 @@ namespace BookStore.Domain.Helpers
             {
                 TagId = input.TagId,
                 Name = input.Name,
-                Description = input.Description,
+                
                 Books = input.Books
             };
         }

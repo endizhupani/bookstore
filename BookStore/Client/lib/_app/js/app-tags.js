@@ -1,0 +1,1 @@
+!function(){"use strict";angular.module("app-tags",["simpleControls","ngRoute","ngSanitize"]).config(["$routeProvider",function(t){t.when("/",{controller:"tagsController",controllerAs:"vm",templateUrl:"/client/views/tags/tagsView.html"}),t.otherwise({redirectTo:"/"})}])}();

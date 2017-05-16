@@ -21,7 +21,7 @@ namespace BookStore.Domain.Concrete
             _context = ctx;
         }
 
-        public async Task<List<BookViewModel>> GetBooksAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "BookId",
+        public async Task<List<BookViewModel>> GetBooksAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "Title",
             List<PropertyFilter> propertyFilters = null, bool includeTags = false)
         {
             IQueryable<Book> query = _context.Books;
@@ -99,16 +99,30 @@ namespace BookStore.Domain.Concrete
             }
             else
             {
-                _context.Books.Add(book.ToBook());
+                
+                Book newBook = book.ToBook();
+                List<Tag> bookDbTags = newBook.Tags.Where(t => t.TagId > 0).ToList();
+                List<int> bookdbTagIds = newBook.Tags.Where(t => t.TagId > 0).Select(x => x.TagId).ToList();
+                foreach (var tag in bookDbTags)
+                {
+                    newBook.Tags.Remove(tag);
+                }
+                List<Tag> dbTags = await _context.Tags.Where(t => bookdbTagIds.Contains(t.TagId)).ToListAsync();
+                
+                _context.Books.Add(newBook);
+                foreach (var tag in dbTags)
+                {
+                    newBook.Tags.Add(tag);
+                }
             }
             return book;
         }
 
-        public async void DeleteBookById(int id)
+        public void DeleteBookById(int id)
         {
             if (id <= 0)
                 return;
-            Book toDelete = await _context.Books.FirstOrDefaultAsync(b => b.BookId == id);
+            Book toDelete =  _context.Books.FirstOrDefault(b => b.BookId == id);
             if (toDelete != null)
             {
                 _context.Books.Remove(toDelete);
@@ -120,7 +134,7 @@ namespace BookStore.Domain.Concrete
             return await _context.SaveChangesAsync();
         }
 
-        public Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "TagId", 
+        public Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending, string orderBy = "Name", 
             List<PropertyFilter> propertyFilters = null, bool includeTags = false)
         {
             IQueryable<Tag> query = _context.Tags;
@@ -139,7 +153,7 @@ namespace BookStore.Domain.Concrete
                 {
                     TagId = t.TagId,
                     Name = t.Name,
-                    Description = t.Description,
+                    
                     Books = t.Books
                 })
                 .ToListAsync();
@@ -157,7 +171,7 @@ namespace BookStore.Domain.Concrete
                 {
                     TagId = t.TagId,
                     Name = t.Name,
-                    Description = t.Description,
+                    
                     Books = t.Books
                 })
                 .FirstOrDefaultAsync();
@@ -182,11 +196,11 @@ namespace BookStore.Domain.Concrete
             return tag;
         }
 
-        public async void DeleteTagById(int id)
+        public void DeleteTagByName(string name)
         {
-            if (id <= 0)
+            if (string.IsNullOrEmpty(name))
                 return;
-            Tag tagToDelete = await _context.Tags.FirstOrDefaultAsync(t => t.TagId == id);
+            Tag tagToDelete = _context.Tags.FirstOrDefault(t => t.Name.Equals(name));
             if (tagToDelete != null)
             {
                 _context.Tags.Remove(tagToDelete);

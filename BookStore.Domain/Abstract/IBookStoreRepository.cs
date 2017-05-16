@@ -28,7 +28,7 @@ namespace BookStore.Domain.Abstract
         /// <param name="includeTags">include tags for each object</param>
         /// <returns>A list of books</returns>
         Task<List<BookViewModel>> GetBooksAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending,
-            string orderBy = "BookId", List<PropertyFilter> propertyFilters = null, bool includeTags = false);
+            string orderBy = "Title", List<PropertyFilter> propertyFilters = null, bool includeTags = false);
 
         /// <summary>
         /// Gets a book with the specified id
@@ -65,7 +65,7 @@ namespace BookStore.Domain.Abstract
         /// <param name="includeTags">If true, the list of tags for each book will be retrieved from the database</param>
         /// <returns>A list of tags</returns>
         Task<List<TagViewModel>> GetTagsAsync(int skip = 0, int take = -1, SortOrder sortOrder = SortOrder.Ascending,
-            string orderBy = "TagId", List<PropertyFilter> propertyFilters = null, bool includeTags = false);
+            string orderBy = "Name", List<PropertyFilter> propertyFilters = null, bool includeTags = false);
 
         /// <summary>
         /// Gets a tag with the specified id
@@ -85,8 +85,8 @@ namespace BookStore.Domain.Abstract
         /// <summary>
         /// Removes a tag from the context
         /// </summary>
-        /// <param name="id">id of the tag to be removed</param>
-        void DeleteTagById(int id);
+        /// <param name="name">name of the tag to be removed</param>
+        void DeleteTagByName(string name);
         #endregion
 
 
