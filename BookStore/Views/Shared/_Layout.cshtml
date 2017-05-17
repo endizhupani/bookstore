@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <!--<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
     <link href="/Client/lib/bootswatch/paper/bootstrap.min.css" rel="stylesheet" />
-    <link href="/Client/css/site.css" rel="stylesheet" />
+    
+    <link href="~/Client/lib/_app/css/site.css" rel="stylesheet" />
+    
     <script src="~/Client/lib/jquery/dist/jquery.min.js"></script>
     @RenderSection("styles", required: false)
 </head>
@@ -45,7 +47,8 @@
         </footer>
     </div>
     
-<script src="~/Client/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="~/Client/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     @RenderSection("scripts", required:false)
 </body>
 </html>

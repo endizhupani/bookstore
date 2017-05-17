@@ -30,9 +30,14 @@
 
         function deleteTag(index) {
 
+           
+
             var tagToDelete = vm.tags[index];
-            if (confirm('Are you sure you want to delete ' + decodeHtml(tagToDelete.name) + '? This tag will be removed from all the books associated with it.')) {
-                $http.delete('/api/tags/' + encodeURIComponent(decodeHtml(tagToDelete.name)))
+            var tagNameDecoded = decodeHtml(tagToDelete.name);
+            if (confirm('Are you sure you want to delete ' + tagNameDecoded + '? This tag will be removed from all the books associated with it.')) {
+                
+                var url = '/api/tags/?name=' + window.encodeURIComponent(tagNameDecoded);
+                $http.delete(url)
                     .then(function () {
                         vm.tags.splice(index, 1);
                         vm.message = "Tag deleted sucessfully";
@@ -57,7 +62,7 @@
             vm.isBusy = true;
             $http.post('/api/tags', vm.tag)
                 .then(function () {
-                    vm.tags.push(vm.tag)
+                    vm.tags.push(vm.tag);
                     $window.location.href = "#!/";
                 }, function () {
                     vm.errorMessage = "Failed to add tag.";

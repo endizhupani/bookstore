@@ -1041,6 +1041,14 @@
     <Content Include="Client\lib\jquery-ui\ui\tabs.js" />
     <Content Include="Client\lib\jquery-ui\ui\tooltip.js" />
     <Content Include="Client\lib\jquery-ui\ui\widget.js" />
+    <Content Include="Client\lib\_app\css\site.css" />
+    <Content Include="Client\lib\_app\js\app-books.js" />
+    <Content Include="Client\lib\_app\js\app-bookstore.js" />
+    <Content Include="Client\lib\_app\js\app-tags.js" />
+    <Content Include="Client\lib\_app\js\books-controller.js" />
+    <Content Include="Client\lib\_app\js\simple-controls.js" />
+    <Content Include="Client\lib\_app\js\site.js" />
+    <Content Include="Client\lib\_app\js\tags-controller.js" />
     <Content Include="Client\views\books\bookDetailsView.html" />
     <Content Include="Client\views\books\bookCreateForm.html" />
     <Content Include="Client\views\books\bookEditForm.html" />
@@ -1060,6 +1068,7 @@
     <Content Include="Client\lib\angular-ui-select\index.js" />
     <Content Include="Client\views\tags\tagsView.html" />
     <Content Include="Client\views\waitCursor.html" />
+    <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1725,6 +1734,11 @@
     <Compile Include="Modules\ApiTagsModule.cs" />
     <Compile Include="Modules\TagsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -1735,9 +1749,12 @@
       <Name>BookStore.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Client\lib\_app\css\" />
-    <Folder Include="Client\lib\_app\js\" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

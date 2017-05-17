@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201705162102209_RemovedTagDescription.Designer.cs">
       <DependentUpon>201705162102209_RemovedTagDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705171322341_DBSeed.cs" />
+    <Compile Include="Migrations\201705171322341_DBSeed.Designer.cs">
+      <DependentUpon>201705171322341_DBSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BookViewModel.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705162102209_RemovedTagDescription.resx">
       <DependentUpon>201705162102209_RemovedTagDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705171322341_DBSeed.resx">
+      <DependentUpon>201705171322341_DBSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

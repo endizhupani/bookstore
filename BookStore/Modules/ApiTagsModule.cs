@@ -30,9 +30,10 @@ namespace BookStore.UI.Modules
 
             Put["/", true] = async (p, ct) => await AddOrUpdateTag();
 
-            Delete["/{name}", true] = async (p, ct) =>
+            Delete["/", true] = async (p, ct) =>
             {
-                _repository.DeleteTagByName(HttpUtility.HtmlDecode(p.name));
+                string name = this.Request.Query["name"];
+                _repository.DeleteTagByName(name);
                 await _repository.SaveChangesAsync();
                 return new JsonResponse(new {success = true}, new DefaultJsonSerializer());
             };

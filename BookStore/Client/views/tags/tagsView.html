@@ -16,7 +16,7 @@
                        type="text"
                        id="name" name="name"
                        ng-model="vm.tag.name"
-                       required ng-minlength="5" ng-maxlength="100" />
+                       required ng-minlength="2" ng-maxlength="100" />
                 <div ng-show="newTagForm.$submitted || newTagForm.name.$touched">
                     <span ng-show="newTagForm.name.$error.required"
                           class="text-warning">
@@ -24,11 +24,11 @@
                     </span>
                     <span ng-show="newTagForm.name.$error.minlength"
                           class="text-warning">
-                        The name must be between 5 and 100 characters
+                        The name must be between 2 and 100 characters
                     </span>
                     <span ng-show="newTagForm.name.$error.maxlength"
                           class="text-warning">
-                        The name be between 5 and 100 characters
+                        The name be between 2 and 100 characters
                     </span>
                 </div>
             </div>

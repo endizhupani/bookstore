@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BookStore.UI
 {
     public class Bootstrapper : NinjectNancyBootstrapper
     {
-
+        
         protected override void ConfigureRequestContainer(IKernel container, NancyContext context)
         {
             base.ConfigureRequestContainer(container, context);
